@@ -58,7 +58,7 @@
           <input
             type="text"
             class="form-control"
-            id="title"
+            name="title"
             aria-describedby="emailHelp"
           />
         </div>
@@ -67,20 +67,18 @@
           <input
             type="text"
             class="form-control"
-            id="desc"
+            name="desc"
             aria-describedby="emailHelp"
           />
         </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="exampleInputPassword1"
-          />
-        </div>
+
         <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <input
+            type="checkbox"
+            class="form-check-input"
+            name="important"
+            id="exampleCheck1"
+          />
           <label class="form-check-label" for="exampleCheck1"
             >Check me out</label
           >
@@ -90,7 +88,9 @@
     </div>
     <div class="container">
       <h2>Your Notes</h2>
-      {% for item in newDoc %}
+
+      {% if newDoc is defined %} No notes to display {% endif %} {% for item in
+      newDoc %}
       <div>{{ item.note }}</div>
       {% endfor %}
     </div>
